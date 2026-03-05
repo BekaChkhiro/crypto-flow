@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoFlow Widget Test - External Website Simulation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            opacity: 0.9;
+            font-size: 18px;
+        }
+        .demo-notice {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .demo-notice code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .widgets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .widget-wrapper {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .widget-label {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .code-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        .code-section h2 {
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            color: #e2e8f0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .code-block .tag { color: #7dd3fc; }
+        .code-block .attr { color: #fcd34d; }
+        .code-block .value { color: #86efac; }
+        .code-block .comment { color: #94a3b8; }
+
+        .options-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .options-table th,
+        .options-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .options-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+        .options-table code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔌 CryptoFlow Widget Test</h1>
+            <p>This page simulates an external website embedding our widget</p>
+        </div>
+
+        <div class="demo-notice">
+            <strong>How it works:</strong> The widget is loaded via a single <code>&lt;script&gt;</code> tag and configured using <code>data-*</code> attributes. No React, no npm, just vanilla JavaScript!
+        </div>
+
+        <div class="widgets-grid">
+            <!-- Bitcoin Dark Theme -->
+            <div class="widget-wrapper">
+                <div class="widget-label">Bitcoin - Dark Theme</div>
+                <div
+                    data-widget="crypto-price"
+                    data-coin="bitcoin"
+                    data-theme="dark">
+                </div>
+            </div>
+
+            <!-- Ethereum Light Theme -->
+            <div class="widget-wrapper">
+                <div class="widget-label">Ethereum - Light Theme</div>
+                <div
+                    data-widget="crypto-price"
+                    data-coin="ethereum"
+                    data-theme="light">
+                </div>
+            </div>
+
+            <!-- Solana with Exchange -->
+            <div class="widget-wrapper">
+                <div class="widget-label">Solana - With Exchange Link</div>
+                <div
+                    data-widget="crypto-price"
+                    data-coin="solana"
+                    data-theme="dark"
+                    data-exchange="Binance">
+                </div>
+            </div>
+
+            <!-- Cardano Minimal -->
+            <div class="widget-wrapper">
+                <div class="widget-label">Cardano - Minimal (no stats)</div>
+                <div
+                    data-widget="crypto-price"
+                    data-coin="cardano"
+                    data-theme="light"
+                    data-show-volume="false"
+                    data-show-market-cap="false">
+                </div>
+            </div>
+
+            <!-- Polkadot -->
+            <div class="widget-wrapper">
+                <div class="widget-label">Polkadot - Dark Theme</div>
+                <div
+                    data-widget="crypto-price"
+                    data-coin="polkadot"
+                    data-theme="dark">
+                </div>
+            </div>
+
+            <!-- Dogecoin -->
+            <div class="widget-wrapper">
+                <div class="widget-label">Dogecoin - Light Theme</div>
+                <div
+                    data-widget="crypto-price"
+                    data-coin="dogecoin"
+                    data-theme="light"
+                    data-exchange="Coinbase">
+                </div>
+            </div>
+        </div>
+
+        <div class="code-section">
+            <h2>📋 Integration Code</h2>
+            <p style="color: #64748b; margin-bottom: 20px;">Copy and paste this code into any HTML page:</p>
+
+            <div class="code-block">
+                <pre><span class="comment">&lt;!-- Step 1: Add widget container wherever you want it --&gt;</span>
+<span class="tag">&lt;div</span>
+    <span class="attr">data-widget</span>=<span class="value">"crypto-price"</span>
+    <span class="attr">data-coin</span>=<span class="value">"bitcoin"</span>
+    <span class="attr">data-theme</span>=<span class="value">"dark"</span>
+    <span class="attr">data-exchange</span>=<span class="value">"Binance"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Step 2: Add script before &lt;/body&gt; (only once per page) --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="value">"<span id="widget-url"></span>/widget.js"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+            </div>
+
+            <h3 style="margin-top: 30px; color: #1e293b;">Configuration Options</h3>
+            <table class="options-table">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Description</th>
+                        <th>Values</th>
+                        <th>Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-coin</code></td>
+                        <td>Cryptocurrency to display</td>
+                        <td>bitcoin, ethereum, solana, etc.</td>
+                        <td>bitcoin</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-theme</code></td>
+                        <td>Widget color theme</td>
+                        <td>dark, light</td>
+                        <td>dark</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-currency</code></td>
+                        <td>Display currency</td>
+                        <td>usd, eur, gbp</td>
+                        <td>usd</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-exchange</code></td>
+                        <td>Show exchange trade link</td>
+                        <td>Binance, Coinbase, etc.</td>
+                        <td>none</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-show-volume</code></td>
+                        <td>Show 24h volume</td>
+                        <td>true, false</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-show-market-cap</code></td>
+                        <td>Show market cap</td>
+                        <td>true, false</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-refresh-interval</code></td>
+                        <td>Auto-refresh interval (ms)</td>
+                        <td>Any number (0 to disable)</td>
+                        <td>60000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- This is the only script needed! -->
+    <script src="/widget.js"></script>
+
+    <script>
+        // Display the current domain in the code example
+        document.getElementById('widget-url').textContent = window.location.origin;
+    </script>
+</body>
+</html>
