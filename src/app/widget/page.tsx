@@ -115,9 +115,9 @@ export default function WidgetPage() {
             <h3 className="font-semibold mb-3">Multiple Coins</h3>
             <div className="bg-slate-950 rounded-lg p-4 font-mono text-xs mb-4 overflow-x-auto">
               <pre className="text-slate-300 whitespace-pre-wrap">
-{`<div data-widget="crypto-exchange" data-coin="bitcoin"></div>
-<div data-widget="crypto-exchange" data-coin="ethereum"></div>
-<div data-widget="crypto-exchange" data-coin="solana"></div>`}
+{`<div data-widget="crypto-price" data-coin="bitcoin"></div>
+<div data-widget="crypto-price" data-coin="ethereum"></div>
+<div data-widget="crypto-price" data-coin="solana"></div>`}
               </pre>
             </div>
             <div className="space-y-3">

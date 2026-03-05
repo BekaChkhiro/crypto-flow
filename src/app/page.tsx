@@ -120,13 +120,13 @@ export default function Home() {
                 <pre className="text-slate-300">
                   <span className="text-slate-500">{'<!-- Add widget container -->'}</span>{'\n'}
                   <span className="text-blue-400">{'<div'}</span>{'\n'}
-                  {'  '}<span className="text-cyan-400">data-widget</span>=<span className="text-amber-400">&quot;crypto-exchange&quot;</span>{'\n'}
+                  {'  '}<span className="text-cyan-400">data-widget</span>=<span className="text-amber-400">&quot;crypto-price&quot;</span>{'\n'}
                   {'  '}<span className="text-cyan-400">data-coin</span>=<span className="text-amber-400">&quot;bitcoin&quot;</span>{'\n'}
                   {'  '}<span className="text-cyan-400">data-theme</span>=<span className="text-amber-400">&quot;dark&quot;</span>{'\n'}
                   {'  '}<span className="text-cyan-400">data-exchange</span>=<span className="text-amber-400">&quot;Binance&quot;</span><span className="text-blue-400">{'>'}</span>{'\n'}
                   <span className="text-blue-400">{'</div>'}</span>{'\n\n'}
                   <span className="text-slate-500">{'<!-- Include script -->'}</span>{'\n'}
-                  <span className="text-blue-400">{'<script'}</span> <span className="text-cyan-400">src</span>=<span className="text-amber-400">&quot;/widget.js&quot;</span><span className="text-blue-400">{'></script>'}</span>
+                  <span className="text-blue-400">{'<script'}</span> <span className="text-cyan-400">src</span>=<span className="text-amber-400">&quot;https://crypto-flow-delta.vercel.app/widget.js&quot;</span><span className="text-blue-400">{'></script>'}</span>
                 </pre>
               </div>
 
