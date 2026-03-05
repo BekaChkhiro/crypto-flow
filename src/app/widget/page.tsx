@@ -58,7 +58,7 @@ export default function WidgetPage() {
             <pre className="text-slate-300 whitespace-pre-wrap">
 {`<!-- Widget Container -->
 <div
-  data-widget="crypto-exchange"
+  data-widget="crypto-price"
   data-coin="bitcoin"
   data-currency="usd"
   data-theme="dark"
@@ -131,7 +131,7 @@ export default function WidgetPage() {
             <div className="bg-slate-950 rounded-lg p-4 font-mono text-xs mb-4 overflow-x-auto">
               <pre className="text-slate-300 whitespace-pre-wrap">
 {`<div
-  data-widget="crypto-exchange"
+  data-widget="crypto-price"
   data-coin="ethereum"
   data-theme="light">
 </div>`}
