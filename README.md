@@ -28,7 +28,7 @@ Embed the widget on any website:
   data-coin="bitcoin"
   data-theme="dark">
 </div>
-<script src="https://your-domain.vercel.app/widget.js"></script>
+<script src="https://crypto-flow-delta.vercel.app/widget.js"></script>
 ```
 
 ### Widget Options

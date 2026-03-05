@@ -66,7 +66,7 @@ export default function WidgetPage() {
 </div>
 
 <!-- Include Script (before </body>) -->
-<script src="https://your-domain.com/widget.js"></script>`}
+<script src="https://crypto-flow-delta.vercel.app/widget.js"></script>`}
             </pre>
           </div>
         </div>
