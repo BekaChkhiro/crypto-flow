@@ -4,17 +4,34 @@
  *
  * Usage:
  * <div data-widget="crypto-price" data-coin="bitcoin" data-theme="dark"></div>
- * <script src="https://your-domain.com/widget.js"></script>
+ * <script src="https://crypto-flow-delta.vercel.app/widget.js"></script>
  */
 
 (function() {
   'use strict';
 
-  // Auto-detect the API base URL from the script's src
-  const scripts = document.getElementsByTagName('script');
-  const currentScript = scripts[scripts.length - 1];
-  const scriptSrc = currentScript.src;
-  const API_BASE = scriptSrc.substring(0, scriptSrc.lastIndexOf('/'));
+  // Detect API base URL from script source
+  function getApiBase() {
+    // Try document.currentScript first (most reliable)
+    if (document.currentScript && document.currentScript.src) {
+      const url = new URL(document.currentScript.src);
+      return url.origin;
+    }
+
+    // Fallback: search for our script in the document
+    const scripts = document.querySelectorAll('script[src*="widget.js"]');
+    for (let script of scripts) {
+      if (script.src.includes('crypto-flow') || script.src.includes('widget.js')) {
+        const url = new URL(script.src);
+        return url.origin;
+      }
+    }
+
+    // Final fallback: use the production domain
+    return 'https://crypto-flow-delta.vercel.app';
+  }
+
+  const API_BASE = getApiBase();
 
   // Default configuration
   const DEFAULTS = {
@@ -355,7 +372,7 @@
           </div>
 
           <div class="cf-powered">
-            Powered by <a href="${API_BASE}" target="_blank">CryptoFlow</a>
+            Powered by <a href="https://crypto-flow-delta.vercel.app" target="_blank">CryptoFlow</a>
           </div>
         </div>
       `;
